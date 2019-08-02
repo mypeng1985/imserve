@@ -40,7 +40,14 @@ namespace ImWebUI.Model
         /// <summary>
         /// 服务端时间戳毫秒数。注意：如果你返回的是标准的 unix 时间戳，记得要 *1000
         /// </summary>
-        public long Timestamp { get; set; } = 1564741543660;
+        public long Timestamp
+        {
+            get
+            {
+                DateTime dt1970 = new DateTime(1970, 1, 1, 8, 0, 0, 0);
+                return (DateTime.Now.Ticks - dt1970.Ticks) / 10000;
+            }
+        }
     }
 
     public class SendGroupMsgModel: ContentModel
