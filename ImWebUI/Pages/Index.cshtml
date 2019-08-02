@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <title>LayIM测试</title>
+    <link rel="stylesheet" href="/src/css/layui.css" media="all">
+    <link rel="stylesheet" href="/src/css/layui.mobile.css" media="all">
+</head>
+<body>
+    <script src="/src/layui.js"></script>
+    <script>
+            var device = layui.device();
+             layui.config({
+              base: '/js/modules/' //你存放新模块的目录，注意，不是layui的模块目录
+            }).use(device.os != 'windows' ? 'imcore_mob' : 'imcore'); //加载入口
+    </script>
+</body>
+</html>
+
